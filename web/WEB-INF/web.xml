@@ -5,10 +5,67 @@
         <servlet-name>HelloServlet</servlet-name>
         <servlet-class>HelloServlet</servlet-class>
     </servlet>
- 
+
     <servlet-mapping>
         <servlet-name>HelloServlet</servlet-name>
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
  
+ 	<servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>LoginServlet</servlet-class>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>   
+    
+
+    
+    <servlet>
+        <servlet-name>LoginReceiveChineseServerlet</servlet-name>
+        <servlet-class>LoginReceiveChineseServerlet</servlet-class>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>LoginReceiveChineseServerlet</servlet-name>
+        <url-pattern>/loginreceivechinese</url-pattern>
+    </servlet-mapping>   
+    
+    
+    
+     <servlet>
+        <servlet-name>LoadOnStartUpServlet</servlet-name>
+        <servlet-class>LoadOnStartUpServlet</servlet-class>
+        <load-on-startup>10</load-on-startup>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>LoadOnStartUpServlet</servlet-name>
+        <url-pattern>/test</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+    <servlet>
+        <servlet-name>showrequestinfo</servlet-name>
+        <servlet-class>ShowDifferentRequestInfoServlet</servlet-class>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>showrequestinfo</servlet-name>
+        <url-pattern>/showrequestinfo</url-pattern>
+    </servlet-mapping>
+    
+    
+    <servlet>
+    	<servlet-name>UploadPhotoServlet</servlet-name>
+    	<servlet-class>UploadFileServlet</servlet-class>
+	</servlet>
+ 
+	<servlet-mapping>
+    	<servlet-name>UploadPhotoServlet</servlet-name>
+    	<url-pattern>/uploadPhoto</url-pattern>
+	</servlet-mapping>   
 </web-app>
