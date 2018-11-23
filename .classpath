@@ -8,5 +8,6 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="D:/项目workshop/EclipseWorkspace/新建文件夹/J2EE/J2ee/web/WEB-INF/lib/mysql-connector-java-5.0.8-bin.jar"/>
+	<classpathentry kind="lib" path="D:/项目workshop/EclipseWorkspace/新建文件夹/J2EE/J2ee/web/WEB-INF/lib/json-lib-2.1-jdk15.jar"/>
 	<classpathentry kind="output" path="web/WEB-INF/classes"/>
 </classpath>
