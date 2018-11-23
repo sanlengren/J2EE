@@ -67,5 +67,59 @@
 	<servlet-mapping>
     	<servlet-name>UploadPhotoServlet</servlet-name>
     	<url-pattern>/uploadPhoto</url-pattern>
-	</servlet-mapping>   
+	</servlet-mapping>  
+	
+	
+	<servlet>
+        <servlet-name>HeroListServlet</servlet-name>
+        <servlet-class>cRUDwithJDBC.HeroListServlet</servlet-class>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>HeroListServlet</servlet-name>
+        <url-pattern>/listHero</url-pattern>
+    </servlet-mapping>   
+	
+	<servlet>
+        <servlet-name>HeroAddServlet</servlet-name>
+        <servlet-class>cRUDwithJDBC.HeroAddServlet</servlet-class>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>HeroAddServlet</servlet-name>
+        <url-pattern>/addHero</url-pattern>
+    </servlet-mapping>   
+	 
+	 
+	<servlet>
+        <servlet-name>HeroDeleteServlet</servlet-name>
+        <servlet-class>cRUDwithJDBC.HeroDeleteServlet</servlet-class>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>HeroDeleteServlet</servlet-name>
+        <url-pattern>/deleteHero</url-pattern>
+    </servlet-mapping>  
+    
+    
+    <servlet>
+        <servlet-name>HeroEditServlet</servlet-name>
+        <servlet-class>cRUDwithJDBC.HeroEditServlet</servlet-class>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>HeroEditServlet</servlet-name>
+        <url-pattern>/editHero</url-pattern>
+    </servlet-mapping>
+    
+    
+        <servlet>
+        <servlet-name>HeroUpdateServlet</servlet-name>
+        <servlet-class>cRUDwithJDBC.HeroUpdateServlet</servlet-class>
+    </servlet>
+ 
+    <servlet-mapping>
+        <servlet-name>HeroUpdateServlet</servlet-name>
+        <url-pattern>/updateHero</url-pattern>
+    </servlet-mapping>
 </web-app>
