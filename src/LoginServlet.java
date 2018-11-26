@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -14,7 +13,7 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
         
         System.out.println("LoginServlet was called");
-        String html = null;
+//        String html = null;
   
         if ("admin".equals(name) && "123".equals(password))
         	//直接返回html,使用类后面的writer输出，页面就可以更新

@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import cRUDwithJDBC.Hero;
 import net.sf.json.JSONSerializer; 
    
+@SuppressWarnings("serial")
 public class GetManyServlet extends HttpServlet { 
     protected void service(HttpServletRequest request, HttpServletResponse response) 
             throws ServletException, IOException {

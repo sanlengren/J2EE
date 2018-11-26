@@ -16,7 +16,7 @@ public class LoginReceiveChineseServerlet extends HttpServlet {
         // byte[] bytes = name.getBytes("ISO-8859-1");
         // name = new String(bytes, "UTF-8");
  
-        String password = request.getParameter("password");
+//        String password = request.getParameter("password");
  
         System.out.println("name:" + name);
  

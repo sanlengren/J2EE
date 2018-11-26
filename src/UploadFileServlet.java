@@ -5,12 +5,11 @@ import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.Iterator;
 import java.util.List;
-  
-import javax.servlet.ServletException;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-  
+
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
@@ -27,14 +26,16 @@ public class UploadFileServlet extends HttpServlet{
             // 设置上传文件的大小限制为1M
             factory.setSizeThreshold(1024 * 1024);
              
-            List items = null;
+            @SuppressWarnings("rawtypes")
+			List items = null;
             try {
                 items = upload.parseRequest(request);
             } catch (FileUploadException e) {
                 e.printStackTrace();
             }
   
-            Iterator iter = items.iterator();
+            @SuppressWarnings("rawtypes")
+			Iterator iter = items.iterator();
             while (iter.hasNext()) {
                 FileItem item = (FileItem) iter.next();
                 if (!item.isFormField()) {

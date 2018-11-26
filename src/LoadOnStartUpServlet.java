@@ -11,7 +11,8 @@ public class LoadOnStartUpServlet extends HttpServlet{
         System.out.println("init of LoadOnStartUpServlet Servlet");
     }
  
-    public void doGet(HttpServletRequest request, HttpServletResponse response){
+    @SuppressWarnings("deprecation")
+	public void doGet(HttpServletRequest request, HttpServletResponse response){
          
         try {
             response.getWriter().println("<h1>Welcome to the LoadOnStartUpServlet !</h1>");

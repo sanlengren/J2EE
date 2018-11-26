@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 public class HelloServlet extends HttpServlet{
 	
+	@SuppressWarnings("deprecation")
 	public void doGet(HttpServletRequest request, HttpServletResponse response){
         
         try {
