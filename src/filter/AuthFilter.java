@@ -24,18 +24,19 @@ public class AuthFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
  
-        String uri = request.getRequestURI();
-        if (uri.endsWith("login.html") || uri.endsWith("login")) {
-            chain.doFilter(request, response);
-            return;
-        }
+//        String uri = request.getRequestURI();
+//        if (uri.endsWith("login.html") || uri.endsWith("login")) {
+//            chain.doFilter(request, response);
+//            return;
+//        }
+// 
+//        String userName = (String) request.getSession().getAttribute("userName");
+//        if (null == userName) {
+//            response.sendRedirect("login.html");
+//            return;
+//        }
  
-        String userName = (String) request.getSession().getAttribute("userName");
-        if (null == userName) {
-            response.sendRedirect("login.html");
-            return;
-        }
- 
+        System.out.println("触发了auth filter，但是不做任何处理");
         chain.doFilter(request, response);
     }
  
