@@ -1,0 +1,269 @@
+<table border="1">
+
+<tr>
+<td><h3>实验的第1段代码</h1>
+<xmp>
+<script>
+  document.write("Hello Javascript");
+</script>
+</xmp>
+</td>
+
+<td><h3>实验的第1段效果</h1>
+
+<script>
+  document.write("Hello Javascript");
+</script>
+<Br/>
+</td>
+
+</tr>
+
+<tr>
+<td><h3>第2段的代码</h1>
+<xmp><button onclick="document.getElementById('text').style.display='none'">隐藏文本</button>
+ 
+<button onclick="document.getElementById('text').style.display='block'">显示文本</button>
+ 
+<p id="text"> 这个是一段可以被javascript隐藏的文本</p></xmp></td>
+<td><h3>第2段的效果</h1>
+
+<Br/>
+<button onclick="document.getElementById('text').style.display='none'">隐藏文本</button>
+ 
+<button onclick="document.getElementById('text').style.display='block'">显示文本</button>
+ 
+<p id="text"> 这个是一段可以被javascript隐藏的文本</p></td>
+</tr>
+
+<tr>
+<td>
+<xmp>
+<script>
+  x = 10;
+  console.log("x="+x);
+  document.write("没有用var声明的变量x的值:"+x);
+  console.log("end");
+</script>
+</xmp>
+</td>
+<script>
+  x = 10;
+  console.log("x="+x);
+  document.write("没有用var声明的变量x的值:"+x);
+  console.log("end");
+</script>
+<td>
+这段代码的目的是在console中打印log做本地调试，相对于alert(1)来说，对用户影响更小<Br/>
+打开浏览器的F12 开发者工具，可以看到信息在浏览器（不是服务器！）的console打出！
+</td>
+</tr>
+
+
+<tr>
+<td>
+<xmp>
+<script>
+  x = 10;
+  alert(1);
+  document.write("没有用var声明的变量x的值:"+x);
+  alert(2);
+</script>
+</xmp>
+</td>
+<td>
+<script>
+  x = 10;
+//   alert(1);
+  document.write("没有用var声明的变量x的值:"+x);
+//   alert(2);
+</script>
+
+这段代码的目的是通过alert()方法来调试，可以看到alert会中断程序执行，干扰大，所以推荐上面的console.log()<Br/>
+注意为了避免干扰，已经注释掉了，可以到源代码修改一下看效果
+</td>
+</tr>
+
+
+<tr>
+<td><h1>
+关于数据类型
+</h1>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td>
+<xmp>
+<script>
+  var x; //声明了变量x,但是没有赋值
+  document.write('声明了，但是没有赋值的变量 x: '+x);
+  
+  
+  var x=true;
+  var y=false;
+  document.write("布尔值:"+x);
+  document.write("<br>");
+  document.write("布尔值:"+y);
+  
+  
+  var a=10; //十进制
+  var b=012;//第一位是0，表示八进制
+  var c=0xA;//0x开头表示十六进制
+  var d=3.14;//有小数点表示浮点数
+  var e=3.14e2;//使用e的幂表示科学计数法
+  document.write("十进制 10 的值: "+a);
+  document.write("<br>");
+  document.write("八进制 012 的值: "+b);
+  document.write("<br>");
+  document.write("十六进制 0xA 的值: "+c);
+  document.write("<br>");
+  document.write("浮点数 3.14 的值: "+d);
+  document.write("<br>");
+  document.write("科学记数法 3.14e2 的值: "+e);
+  document.write("<br>");
+  
+  var x='hello '; //单引号
+  var y="javascript"; //双引号
+  document.write("单引号的字符串:"+x);
+  document.write("<br>");
+  document.write("双引号的字符串:"+y);
+  
+  var x=10; //Number类型
+  document.write("此时 x的值是 "+x+" 类型是数字");
+  document.write("<br>");
+  x = "hello javascript"; //String类型
+  document.write("此时 x的值是 "+x+" 类型是字符串");
+  
+  var x;
+  document.write('声明了但是未赋值的时候，类型是： '+typeof x);
+  document.write("<br>");
+  x=5;
+  document.write('赋值为5之后，类型是： '+typeof x);
+  document.write("<br>");
+  x=5.1;
+  document.write('赋值为5.1之后，类型是： '+typeof x);
+  document.write("<br>");
+  x=true;
+  document.write('赋值为true之后，类型是： '+typeof x);
+  document.write("<br>");
+  x="hello";
+  document.write('赋值为hello之后，类型是： '+typeof x);
+</script>
+</xmp>
+</td>
+<td>
+<script>
+  var haha; //声明了变量x,但是没有赋值
+  document.write('声明了，但是没有赋值的变量 x: '+haha);
+  document.write("<br/>")
+  document.write("<br/>")
+  var x=true;
+  var y=false;
+  document.write("布尔值:"+x);
+  document.write("<br>");
+  document.write("布尔值:"+y);
+  document.write("<br/>")
+  document.write("<br/>")
+  var a=10; //十进制
+  var b=012;//第一位是0，表示八进制
+  var c=0xA;//0x开头表示十六进制
+  var d=3.14;//有小数点表示浮点数
+  var e=3.14e2;//使用e的幂表示科学计数法
+  document.write("十进制 10 的值: "+a);
+  document.write("<br>");
+  document.write("八进制 012 的值: "+b);
+  document.write("<br>");
+  document.write("十六进制 0xA 的值: "+c);
+  document.write("<br>");
+  document.write("浮点数 3.14 的值: "+d);
+  document.write("<br>");
+  document.write("科学记数法 3.14e2 的值: "+e);
+  document.write("<br>");
+  
+  document.write("<br/>")
+  document.write("<br/>")
+  
+  var x='hello '; //单引号
+  var y="javascript"; //双引号
+  document.write("单引号的字符串:"+x);
+  document.write("<br>");
+  document.write("双引号的字符串:"+y);
+  
+  document.write("<br/>")
+  document.write("<br/>") 
+  var x=10; //Number类型
+  document.write("此时 x的值是 "+x+" 类型是数字");
+  document.write("<br>");
+  x = "hello javascript"; //String类型
+  document.write("此时 x的值是 "+x+" 类型是字符串");
+  
+  document.write("<br/>")
+  document.write("<br/>") 
+  var x;
+  document.write('声明了但是未赋值的时候，类型是： '+typeof x);
+  document.write("<br>");
+  x=5;
+  document.write('赋值为5之后，类型是： '+typeof x);
+  document.write("<br>");
+  x=5.1;
+  document.write('赋值为5.1之后，类型是： '+typeof x);
+  document.write("<br>");
+  x=true;
+  document.write('赋值为true之后，类型是： '+typeof x);
+  document.write("<br>");
+  x="hello";
+  document.write('赋值为hello之后，类型是： '+typeof x);
+  
+</script>
+
+
+</td>
+</tr>
+
+
+
+
+
+<tr>
+<td>
+<xmp>
+<script>
+  var a=10;
+  document.write("数字 "+a+" 转换为字符串"+a.toString());
+  document.write("<br>");
+ 
+  var b=true;
+  document.write("布尔 "+b+" 转换为字符串"+b.toString());
+  document.write("<br>");
+ 
+  var c="hello javascript";
+  document.write("字符串 "+c+" 转换为字符串 "+c.toString());
+  document.write("<br>");
+ 
+</script>
+</xmp>
+</td>
+<td>
+<script>
+  var a=10;
+  document.write("数字 "+a+" 转换为字符串"+a.toString());
+  document.write("<br>");
+ 
+  var b=true;
+  document.write("布尔 "+b+" 转换为字符串"+b.toString());
+  document.write("<br>");
+ 
+  var c="hello javascript";
+  document.write("字符串 "+c+" 转换为字符串 "+c.toString());
+  document.write("<br>");
+ 
+</script>
+
+
+</td>
+</tr>
+</table>

@@ -1,0 +1,145 @@
+
+<style>
+span.r{
+display:inline-block;
+margin:10px;
+  text-align:center;
+  position: relative;
+/*   padding-left:40px; */
+  color:#3399FF
+}
+
+span.a{
+float:left
+position: relative;
+	width:50px;
+}
+
+table.x{
+
+  position: relative;
+/*   padding-left:20px; */
+}
+
+
+td.opt{
+text-align:center;
+width: 50px; 
+height: 30px
+}
+/* div.y{ */
+/* position: absolute; */
+/* display:inline-block; */
+/* margin:10px; */
+/* bottom: 0; */
+/* } */
+  
+</style>
+
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Drop Down Demo</title>
+</head>
+
+
+<span id="weapon" class="r" onmousemove='showdropdown("weapon","true")' >武器</span>
+<span id="armour" class="r" onmousemove='showdropdown("armour","true")' >护甲</span>
+<span id="hero"   class="r" onmousemove='showdropdown("hero","true")'   >英雄</span>
+
+<div class="y">
+<table frame="border"  id = "weapon_dropdown" hidden="true" class="x">
+  <tr >
+      <td class="opt">大剑</td>
+  </tr>
+  <tr>
+      <td class="opt">屠龙</td>
+  </tr>
+   <tr>
+      <td class="opt">倚天</td>
+  </tr>
+   <tr>
+      <td class="opt">七孔砖</td>
+  </tr>
+</table>
+
+<table frame="border" id = "armour_dropdown" hidden="true" class="x">
+  <tr>
+      <td class="opt">胸甲</td>
+  </tr>
+  <tr>
+      <td class="opt">护腕</td>
+  </tr>
+    <tr>
+      <td class="opt">头盔</td>
+  </tr>
+    <tr>
+      <td class="opt">鞋子</td>
+  </tr>
+</table>
+
+<table frame="border" id = "hero_dropdown" hidden="true" class="x">
+  <tr>
+      <td class="opt" >盖伦</td>
+  </tr>
+  <tr>
+      <td class="opt">提莫</td>
+  </tr>
+    <tr>
+      <td class="opt">安妮</td>
+  </tr>
+    <tr>
+      <td class="opt">死哥</td>
+  </tr>
+</table>
+
+</div>
+<script>
+  function showdropdown(listname,display){
+	  
+	  if (listname == "weapon"){
+		  if (display == "true" ){
+			  document.getElementById("weapon_dropdown").hidden = false;
+			  document.getElementById("armour_dropdown").hidden = true;
+			  document.getElementById("hero_dropdown").hidden = true;
+			  document.getElementById("weapon_dropdown").style.left = document.getElementById("weapon").offsetLeft;
+		  }
+		        
+	  }
+	  
+	  if (listname == "armour"){
+		  if (display == "true" ){
+			  document.getElementById("armour_dropdown").hidden = false;
+			  document.getElementById("weapon_dropdown").hidden = true;
+			  document.getElementById("hero_dropdown").hidden = true;
+		  }
+		 
+		  document.getElementById("armour_dropdown").style.left = document.getElementById("armour").offsetLeft;
+	  }
+	  
+	  if (listname == "hero"){
+		  if (display == "true" ){
+			  document.getElementById("armour_dropdown").hidden = true;
+			  document.getElementById("weapon_dropdown").hidden = true;
+			  document.getElementById("hero_dropdown").hidden = false;
+			  document.getElementById("hero_dropdown").style.left = document.getElementById("hero").offsetLeft;
+		  }
+
+  }
+  }
+  
+  window.onload = function() {
+	  var tds = document.getElementsByTagName("tr");//获取所有的div
+	  for(var i = 0; i<tds.length; i++) {//循环让每个div都有效果
+		  tds[i].style.backgroundColor = "#FFFFFF";
+		  tds[i].onmouseover = function(){
+	      this.style.backgroundColor = "#CCCCCC";
+	    }
+		  tds[i].onmouseout =function(){
+	      this.style.backgroundColor = "#FFFFFF";
+	    } 
+	  }
+	}  
+
+</script>
+</html>

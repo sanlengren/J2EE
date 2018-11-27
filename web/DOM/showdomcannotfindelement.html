@@ -1,0 +1,26 @@
+<html>
+ 
+<h5>代码是这样的</h5>
+<xmp>
+<script>
+var  div1 = document.getElementById("d1");
+document.write(div1);
+</script>
+<div id="d1">hello HTML DOM</div>
+
+</xmp>
+
+<Br/>
+<h5>执行结果是</h5>
+<Br/>
+<script>
+var  div1 = document.getElementById("d1");
+document.write(div1);
+</script>
+</html>
+ 
+<div id="d1">hello HTML DOM</div>
+<Br/><Br/>
+<h5>第一个显示Null原因是因为脚本顺序加载解释，在加载时候后后面的DIV没有加载，所以读取不到，显示null,持续加载到后面读取到了就显示出来了（显示DIV，不是dom调用）</h5>
+
+</html>

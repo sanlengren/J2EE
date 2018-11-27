@@ -1,0 +1,48 @@
+<h5 align="center">Js通过操纵dom上面节点的style动态修改行为</h5>
+<h5>以下是演示代码</h5>
+<xmp>   
+<button onclick="hide()">隐藏div</button>
+<button onclick="show()">显示div</button>
+<br>
+<br>
+<div id="d">
+这是一个div
+</div>
+  
+<script>
+function hide(){
+ var d = document.getElementById("d");
+ d.style.display="none";
+}
+  
+function show(){
+ var d = document.getElementById("d");
+ d.style.display="block";
+}
+  
+</script>
+</xmp>
+<Br/>
+
+<h5>显示效果是</h5>
+<button onclick="hide()">隐藏div</button>
+<button onclick="show()">显示div</button>
+<br>
+<br>
+<div id="d">
+这是一个div
+</div>
+  
+<script>
+function hide(){
+ var d = document.getElementById("d");
+ d.style.display="none";
+}
+  
+function show(){
+ var d = document.getElementById("d");
+ d.style.display="block";
+}
+  
+</script>
+<hr/>

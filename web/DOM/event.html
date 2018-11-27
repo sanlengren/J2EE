@@ -1,0 +1,278 @@
+<h5 align="center">以下例子是text控件通过响应onfocus/onblur 两个event实现交互</h5>
+
+<xmp> <input type="text" onfocus="f()" onblur="b()" id="input1" placeHolder="输入框1" >
+<br>
+<br>
+<input type="text" id="input2" placeHolder="输入框2">
+<br>
+<br>
+<div id="case1_message"></div>
+ 
+<script>
+function f(){
+ document.getElementById("case1_message").innerHTML="输入框1获取了焦点";
+}
+ 
+function b(){
+ document.getElementById("case1_message").innerHTML="输入框1丢失了焦点";
+}
+ 
+</script>
+</xmp>
+<Br/>
+
+<h5>显示效果是</h5>
+
+
+
+
+<input type="text" onfocus="f()" onblur="b()" id="input1" placeHolder="输入框1" >
+<br>
+<br>
+<input type="text" id="input2" placeHolder="输入框2">
+<br>
+<br>
+<div id="case1_message"></div>
+ 
+<script>
+function f(){
+ document.getElementById("case1_message").innerHTML="输入框1获取了焦点";
+}
+ 
+function b(){
+ document.getElementById("case1_message").innerHTML="输入框1丢失了焦点";
+}
+ 
+</script>
+<hr/>
+
+
+<h5 align="center">展示鼠标事件</h5>
+<h5>以下是演示代码</h5>
+<xmp> <input type="button" onmousedown="down()" onmouseup="up()" value="用于演示按下和弹起" >
+<br>
+<br>
+ 
+<input type="button" onmousemove="move()"  value="用于演示鼠标经过" >
+<br>
+<br>
+ 
+<input type="button" onmouseover="over()" value="用于演示鼠标进入" >
+<br>
+<br>
+ 
+<input type="button" onmouseout="out()" value="用于演示鼠标退出" >
+ 
+<br>
+<br>
+<div id="case2_message"></div>
+  
+<script>
+var number = 0;
+ 
+function down(){
+document.getElementById("case2_message").innerHTML="按下了鼠标";
+}
+  
+function up(){
+document.getElementById("case2_message").innerHTML="弹起了鼠标";
+}
+ 
+function move(){
+document.getElementById("case2_message").innerHTML="鼠标经过次数:"+(++number);
+}
+ 
+function over(){
+document.getElementById("case2_message").innerHTML="鼠标进入次数:"+(++number);
+}
+ 
+function out(){
+document.getElementById("case2_message").innerHTML="鼠标退出";
+number = 0;
+}
+ 
+</script>
+</xmp>
+<Br/>
+
+<h5>显示效果是</h5>
+<input type="button" onmousedown="down()" onmouseup="up()" value="用于演示按下和弹起" >
+<br>
+<br>
+ 
+<input type="button" onmousemove="move()"  value="用于演示鼠标经过" >
+<br>
+<br>
+ 
+<input type="button" onmouseover="over()" value="用于演示鼠标进入" >
+<br>
+<br>
+ 
+<input type="button" onmouseout="out()" value="用于演示鼠标退出" >
+ 
+<br>
+<br>
+<div id="case2_message"></div>
+  
+<script>
+var number = 0;
+ 
+function down(){
+document.getElementById("case2_message").innerHTML="按下了鼠标";
+}
+  
+function up(){
+document.getElementById("case2_message").innerHTML="弹起了鼠标";
+}
+ 
+function move(){
+document.getElementById("case2_message").innerHTML="鼠标经过次数:"+(++number);
+}
+ 
+function over(){
+document.getElementById("case2_message").innerHTML="鼠标进入次数:"+(++number);
+}
+ 
+function out(){
+document.getElementById("case2_message").innerHTML="鼠标退出";
+number = 0;
+}
+ 
+</script>
+<hr/>
+
+
+<h5 align="center">展示键盘事件</h5>
+<h5>以下是演示代码</h5>
+<xmp> “记得要先用鼠标选中该组件，然后敲击键盘”
+<br>
+<input type="button" onkeydown="down(event)" value="用于演示按下keydown" >
+<br>
+<br>
+ 
+<input type="button" onkeypress="press(event)" value="用于演示按下keypress" >
+<br>
+<br>
+ 
+<input type="button" onkeyup="up()" value="用于演示弹起" >
+<br>
+<br>
+ 
+<div id="case3_message">
+  
+</div>
+  
+<script>
+var number =0;
+function down(e){
+ 
+var text = "按下了键" + e.keyCode;
+if(e.shiftKey==1)
+   text += " 并且按下了shift键";
+ 
+document.getElementById("case3_message").innerHTML=text ;
+}
+ 
+function up(){
+document.getElementById("case3_message").innerHTML="弹起了键盘";
+}
+ 
+function press(e){
+var text = "按下了键" + e.keyCode;
+if(e.shiftKey==1)
+   text += " 并且按下了shift键";
+ 
+document.getElementById("case3_message").innerHTML=text ;
+}
+ 
+</script>
+</xmp>
+<Br/>
+
+<h5>显示效果是</h5>
+“记得要先用鼠标选中该组件，然后敲击键盘”
+<br>
+<input type="button" onkeydown="down(event)" value="用于演示按下keydown" >
+<br>
+<br>
+ 
+<input type="button" onkeypress="press(event)" value="用于演示按下keypress" >
+<br>
+<br>
+ 
+<input type="button" onkeyup="up()" value="用于演示弹起" >
+<br>
+<br>
+ 
+<div id="message">
+  
+</div>
+  
+<script>
+var number =0;
+function down(e){
+ 
+var text = "按下了键" + e.keyCode;
+if(e.shiftKey==1)
+   text += " 并且按下了shift键";
+ 
+document.getElementById("message").innerHTML=text ;
+}
+ 
+function up(){
+document.getElementById("message").innerHTML="弹起了键盘";
+}
+ 
+function press(e){
+var text = "按下了键" + e.keyCode;
+if(e.shiftKey==1)
+   text += " 并且按下了shift键";
+ 
+document.getElementById("message").innerHTML=text ;
+}
+ 
+</script>
+<hr/>
+
+
+<h5 align="center">阻止事件的发生</h5>
+<h5>以下是演示代码</h5>
+<xmp> <form method="post" action="/study/login.jsp" onsubmit="return login()">
+账号：<input id="name" type="text" name="name"> <br/>
+密码：<input type="password" name="password" > <br/>
+<input type="submit" value="登陆">
+</form>
+  
+<script>
+  function login(){
+   var name = document.getElementById("name");
+   if(name.value.length==0){
+     alert("用户名不能为空");
+     return false;
+   }
+   return true;
+    
+  }
+</script>
+</xmp>
+<Br/>
+
+<h5>显示效果是</h5>
+<form method="post" action="/study/login.jsp" onsubmit="return login()">
+账号：<input id="name" type="text" name="name"> <br/>
+密码：<input type="password" name="password" > <br/>
+<input type="submit" value="登陆">
+</form>
+  
+<script>
+  function login(){
+   var name = document.getElementById("name");
+   if(name.value.length==0){
+     alert("用户名不能为空");
+     return false;
+   }
+   return true;
+    
+  }
+</script>
+<hr/>
