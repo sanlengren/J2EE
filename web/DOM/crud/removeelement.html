@@ -1,0 +1,71 @@
+<script>
+function removeDiv(){
+  var parentDiv = document.getElementById("case1_parentDiv");
+  var div2= document.getElementById("case1_div2");
+  parentDiv.removeChild(div2);
+}
+ 
+</script>
+ 
+<div id="case1_parentDiv">
+  <div id="case1_div1">安全的div</div>
+  <div id="case1_div2">即将被删除的div</div>
+</div>
+ 
+<button onclick="removeDiv()">删除第二个div</button>
+
+<Br/>
+<Br/>
+<Br/>
+
+<script>
+function removeHref(){
+  var link= document.getElementById("link");
+  link.removeAttribute("href");
+}
+ 
+</script>
+ 
+<a id="link" href="http://12306.com">http://12306.com</a>
+ 
+<br>
+<button onclick="removeHref()">删除超链的href属性</button>
+
+
+<Br/>
+<Br/>
+<Br/>
+
+
+<script>
+ 
+function removeDiv1(){
+  var parentDiv = document.getElementById("parentDiv");
+  var textNode = parentDiv.childNodes[0];
+  parentDiv.removeChild(textNode);
+}
+function removeDiv2(){
+  var parentDiv = document.getElementById("parentDiv");
+  parentDiv.innerHTML="";
+}
+function recover(){
+  var parentDiv = document.getElementById("parentDiv");
+  parentDiv.innerHTML="这里是文本 ";
+}
+ 
+</script>
+ 
+<style>
+button{
+display:block;
+}
+</style>
+ 
+<div id="parentDiv">
+   这里是文本
+ 
+</div>
+ 
+<button onclick="removeDiv1()">通过removechild删除div下的文本节点</button>
+<button onclick="removeDiv2()">通过innerHTML让内容置空</button>
+<button onclick="recover()">恢复内容</button>

@@ -1,0 +1,18 @@
+<button id="case" onclick="loadjs()">º”‘ÿJS</button>
+
+<script>
+
+function loadjs(){
+	var script = 'alert("this is test3041.js")';
+// 	var tag = 'script' 
+	var text = document.createTextNode(script);
+	var d4 = document.createElement('script');
+	d4.appendChild(text);
+	
+	var div1 = document.getElementById("case")
+	div1.appendChild(d4);
+}
+
+// 	alert("this is test3041.js"); 
+
+</script>

@@ -1,0 +1,48 @@
+<div id="case1_parentDiv">
+ <div id="case1_d1">第一个div</div>
+ <div id="case1_d2">第二个div</div>
+ <div id="case1_d3">第三个div</div>
+</div>
+   
+<script>
+   
+function appendDiv(){
+  var d4=  document.createElement("div");
+  var text = document.createTextNode("第四个div");
+  d4.appendChild(text);
+   
+  var parentDiv = document.getElementById("case1_parentDiv");
+   
+  parentDiv.appendChild(d4);
+}
+  
+</script>
+   
+<button onclick="appendDiv()">追加第4个div</button>
+
+<br/>
+<br/>
+<br/>
+
+<div id="case2_parentDiv">
+ <div id="case2_d1">第一个div</div>
+ <div id="case2_d2">第二个div</div>
+ <div id="case2_d3">第三个div</div>
+</div>
+   
+<script>
+   
+function insertDiv(){
+  var d25=  document.createElement("div");
+  var text = document.createTextNode("第二点五个div");
+  d25.appendChild(text);
+   
+  var parentDiv = document.getElementById("case2_parentDiv");
+  var d3 = document.getElementById("case2_d3");
+   
+  parentDiv.insertBefore(d25,d3);
+}
+  
+</script>
+   
+<button onclick="insertDiv()">在第二和第三之间，插入第二点五个div</button>

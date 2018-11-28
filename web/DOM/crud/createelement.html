@@ -1,0 +1,48 @@
+<html>
+<div id="case1">Hello HTML DOM</div>
+<script>
+function addhr(){
+  var hr=document.createElement("hr");
+  var div1 = document.getElementById("case1");
+  div1.appendChild(hr);
+}
+</script>
+ 
+<button onclick="addhr()">在div中追加一个hr元素</button>
+
+<div id="case2">Hello HTML DOM</div>
+<script>
+function addTextNode(){
+ 
+  var p=document.createElement("p");
+  var text = document.createTextNode("这是通过DOM创建出来的<p>");
+  p.appendChild(text);
+ 
+  var div1 = document.getElementById("case2");
+  div1.appendChild(p);
+ 
+}
+</script>
+  
+<button onclick="addTextNode()">在div中追加一个p元素</button> 
+
+
+<div id="case3">Hello HTML DOM<br></div>
+<script>
+function addhref(){
+  
+  var a=document.createElement("a");
+  var content = document.createTextNode("http://12306.com");
+  a.appendChild(content);
+ 
+  var href = document.createAttribute("href");
+  href.nodeValue="http://12306.com";
+  a.setAttributeNode(href);
+ 
+  var div1 = document.getElementById("case3");
+  div1.appendChild(a);
+}
+</script>
+   
+<button onclick="addhref()">在div中追加一个超链</button>
+</html>

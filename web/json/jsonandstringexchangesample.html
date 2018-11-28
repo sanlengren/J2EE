@@ -1,0 +1,53 @@
+<h5>第一段代码展示</h5>
+<xmp>
+<script>
+ 
+var s1 = "{\"name\":\"盖伦\"";
+var s2 = ",\"hp\":616}";
+var s3 = s1+s2;
+ 
+document.write("这是一个JSON格式的字符串:" + s3);
+document.write("<br>");
+var gareen = eval("("+s3+")");
+ 
+document.write("这是一个JSON对象: " + gareen);
+  
+</script>
+</xmp>
+<br/>
+<h5>第一段执行效果展示,注意拼接前是个string,要通过eval()处理--》eval() 函数可计算某个字符串，并执行其中的的 JavaScript 代码。--》还是不太懂</h5>
+<script>
+ 
+var s1 = "{\"name\":\"盖伦\"";
+var s2 = ",\"hp\":616}";
+var s3 = s1+s2;
+ 
+document.write("这是一个JSON格式的字符串:" + s3);
+document.write("<br>");
+var gareen = eval("("+s3+")");
+ 
+document.write("这是一个JSON对象: " + gareen);
+  
+</script>
+<hr/>
+
+<h5>第二段代码</h5>
+<xmp>
+<script>
+var hero = {"name":"盖伦","hp":"616"};
+document.write("这是一个json 对象："+ hero);
+document.write("<br>");
+var heroString = JSON.stringify(hero)
+document.write("这是一个json 字符串："+ heroString );
+</script>
+</xmp>
+
+<br/>
+<h5>第二段代码展示，使用了JSON.stringify()去把json object处理为string </h5>
+<script>
+var hero = {"name":"盖伦","hp":"616"};
+document.write("这是一个json 对象："+ hero);
+document.write("<br>");
+var heroString = JSON.stringify(hero)
+document.write("这是一个json 字符串："+ heroString );
+</script>
