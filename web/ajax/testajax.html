@@ -1,0 +1,43 @@
+<h4>这个例子展示了，如果不使用ajax,会需要跳转才能拿到结果</h4>
+<!-- <html> -->
+ 
+<!-- <a href="http://localhost:8080/ajax/checkName.jsp?name=abc">checkName.jsp?name=abc</a> -->
+<!-- <br> -->
+<!-- <a href="http://localhost:8080/ajax/checkName.jsp?name=def">checkName.jsp?name=def</a> -->
+ 
+<!-- </html> -->
+
+
+<form action="http://localhost:8080/ajax/checkName.jsp">
+ 
+输入账号 <input name="name" type="text" value="abc">
+ 
+<input type="submit" value="验证账号是否存在">
+ 
+</form>
+<hr/>
+<h4>这个例子展示了，如果使用ajax, 不需要跳转，异步等待结果返回刷新页面</h4>
+
+<span>输入账号 :</span>
+<input id="name" name="name" onkeyup="check()" type="text"> 
+<span id="checkResult"></span>
+ 
+<script>
+var xmlhttp;
+function check(){
+  var name = document.getElementById("name").value;
+  var url = "http://localhost:8080/ajax/checkName.jsp?name="+name;
+ 
+  xmlhttp =new XMLHttpRequest();
+  xmlhttp.onreadystatechange=checkResult; //响应函数
+  xmlhttp.open("GET",url,true);   //设置访问的页面
+  xmlhttp.send(null);  //执行访问
+}
+ 
+function checkResult(){
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    document.getElementById('checkResult').innerHTML=xmlhttp.responseText;
+  
+}
+ 
+</script>
