@@ -21,7 +21,9 @@ table.x{
 /*   padding-left:20px; */
 }
 
-
+ tr:hover {background-color: #CCCCCC;}   
+ 
+/*  hover方法比我配置一个响应事件要简单得多！！见原来得134行！ */
 td.opt{
 text-align:center;
 width: 50px; 
@@ -33,7 +35,8 @@ height: 30px
 /* margin:10px; */
 /* bottom: 0; */
 /* } */
-  
+<
+
 </style>
 
 <html>
@@ -128,18 +131,18 @@ height: 30px
   }
   }
   
-  window.onload = function() {
-	  var tds = document.getElementsByTagName("tr");//获取所有的div
-	  for(var i = 0; i<tds.length; i++) {//循环让每个div都有效果
-		  tds[i].style.backgroundColor = "#FFFFFF";
-		  tds[i].onmouseover = function(){
-	      this.style.backgroundColor = "#CCCCCC";
-	    }
-		  tds[i].onmouseout =function(){
-	      this.style.backgroundColor = "#FFFFFF";
-	    } 
-	  }
-	}  
+//   window.onload = function() {
+// 	  var tds = document.getElementsByTagName("tr");//获取所有的div
+// 	  for(var i = 0; i<tds.length; i++) {//循环让每个div都有效果
+// 		  tds[i].style.backgroundColor = "#FFFFFF";
+// 		  tds[i].onmouseover = function(){
+// 	      this.style.backgroundColor = "#CCCCCC";
+// 	    }
+// 		  tds[i].onmouseout =function(){
+// 	      this.style.backgroundColor = "#FFFFFF";
+// 	    } 
+// 	  }
+// 	}  
 
 </script>
 </html>
