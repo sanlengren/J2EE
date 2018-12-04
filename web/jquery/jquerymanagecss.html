@@ -1,0 +1,125 @@
+<script src="http://localhost:8080/jquery.min.js"></script>
+
+<h4>显示jquery动态增加CSS class效果[addClass()]<hr/>
+<script>
+$(function(){
+   $("#case1_button").click(function(){
+      $("#case1_div").addClass("case_color1");
+   });
+  
+});
+  
+</script>
+  <button id="case1_button">增加背景色</button>
+<br>
+<br>
+ 
+<style>
+.case_color1{
+   background-color:pink;
+}
+</style>
+  
+<div id="case1_div">
+  
+Hello JQuery
+  
+</div>
+
+<br/>
+<br/>
+<br/>
+<h4>显示jquery动态移除CSS class效果<hr/>
+<script>
+$(function(){
+   $("#case2_button").click(function(){
+      $("#case2_div").removeClass("case_color2");
+   });
+  
+});
+  
+</script>
+  <button id="case2_button">删除背景色</button>
+<br>
+<br>
+ 
+<style>
+.case_color2{
+   background-color:pink;
+}
+</style>
+  
+<div id="case2_div" class="case_color2">
+  
+Hello JQuery
+  
+</div>
+
+
+
+
+<br/>
+<br/>
+<br/>
+<h4>显示jquery动态切换CSS class效果,切换的意思是，存在就删除，不存在就添加<hr/>
+<script>
+$(function(){
+   $("#case3_button").click(function(){
+      $("#case3_div").toggleClass("case3_color");
+   });
+   
+});
+   
+</script>
+  <button id="case3_button">切换背景色</button>
+<br>
+<br>
+  
+<style>
+.case3_color{
+   background-color:pink;
+}
+</style>
+   
+<div id="case3_div" >
+   
+Hello JQuery
+   
+</div>
+
+
+<br/>
+<br/>
+<br/>
+<h4>显示jquery通过CSS函数直接修改属性<hr/>
+
+
+<script>
+$(function(){
+   $("#case4_button1").click(function(){
+      $("#case4_div1").css("background-color","pink");
+   });
+   
+   $("#case4_button2").click(function(){
+      $("#case4_div2").css({"background-color":"pink","color":"green"});
+   });
+ 
+});
+   
+</script>
+  <button id="case4_button1">设置单一样式</button>
+  <button id="case4_button2">设置多种样式</button>
+<br>
+<br>
+  
+<div id="case4_div1" >
+   
+单一样式，只设置背景色
+   
+</div>
+ 
+<div id="case4_div2" >
+   
+多种样式，不仅设置背景色，还设置字体颜色
+   
+</div>

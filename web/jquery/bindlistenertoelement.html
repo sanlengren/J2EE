@@ -1,0 +1,42 @@
+<script src="http://localhost:8080/jquery.min.js"></script>
+ 
+<script >
+ 
+$(function(){
+     $("#b1").click(function(){
+        alert("点击了按钮");
+     });
+});
+ 
+</script>
+ 
+<button id="b1">按钮</button>
+
+
+
+
+<button id="case2">显示</button>
+<button id="case3">隐藏</button>
+<div id="c">
+实验文字
+</div>
+<script>
+$(function(){
+  $("#case2").click(function(){
+     alert("即将显示！");
+//      debugger;
+    $("#c").show();
+//     debugger;
+     alert("已显示！");
+});
+$("#case3").click(function(){
+     alert("即将隐藏！");
+//      debugger;
+alert($("#c").context.hidden);
+   $("#c").hide();
+   debugger;
+alert($("#c").context.hidden);
+     alert("已隐藏！");
+ });
+});
+</script>
