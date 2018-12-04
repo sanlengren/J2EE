@@ -1,0 +1,309 @@
+<script src="http://localhost:8080/jquery.min.js"></script>
+
+<table width="100%"    max-width="100%"    margin-bottom="20px">
+<thead>
+<tr>
+	<th width="" style="padding-right:20px">关键字</th>
+	<th width="">简介</th>
+	<th>示例代码 </th>
+</tr>
+</thead>
+<tbody><tr valign="top">
+	<td>
+			first()<br>last()<br>eq(num)
+	</td>
+	<td class="text">
+		<dive class="pull-left">
+		 第一个 最后一个 第几个
+		</dive>		
+	</td>	
+	<td>
+		<a href="#step1247" class="btn btn-info btn-xs">示例代码</a>
+	</td>
+</tr>
+<tr valign="top">
+	<td>
+			parent()<br>parents()
+	</td>
+	<td class="text">
+		<dive class="pull-left">
+		 父 祖先
+		</dive>		
+	</td>	
+	<td>
+		<a href="#step1248" class="btn btn-info btn-xs">示例代码</a>
+	</td>
+</tr>
+<tr valign="top">
+	<td>
+			children()<br>find()
+	</td>
+	<td class="text">
+		<dive class="pull-left">
+		 儿子 后代
+		</dive>		
+	</td>	
+	<td>
+		<a href="#step1249" class="btn btn-info btn-xs">示例代码</a>
+	</td>
+</tr>
+<tr valign="top">
+	<td>
+			siblings()
+	</td>
+	<td class="text">
+		<dive class="pull-left">
+		 同级
+		</dive>		
+	</td>	
+	<td>
+		<a href="#step1250" class="btn btn-info btn-xs">示例代码</a>
+	</td>
+</tr>
+</tbody></table>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<h4>示例 10 : 表单对象属性</h4>
+<ul>
+<li>:enabled会选择可用的输入元素 注：输入元素的默认状态都是可用 </li>
+<li>:disabled会选择不可用的输入元素 </li>
+<li>:checked会选择被选中的单选框和复选框 注： checked在部分浏览器上(火狐,chrome)也可以选中selected的option </li>
+<li>:selected会选择被选中的option元素</li>
+</ul>
+
+<script>
+$(function(){
+   $("#case1_button1").click(function(){
+      $("div").first().toggleClass("pink");
+   });
+ 
+   $("#case1_button2").click(function(){
+      $("div").last().toggleClass("pink");
+   });
+ 
+   $("#case1_button3").click(function(){
+      $("div").eq(4).toggleClass("pink");
+   });
+        
+});
+        
+</script>
+  <button id="case1_button1">切换第1个div背景色</button>
+  <button id="case1_button2">切换最后1个div背景色</button> 
+  <button id="case1_button3">切换第5个div背景色</button>
+ 
+<br>
+<br>
+       
+<style>
+.pink{
+   background-color:pink;
+}
+ 
+</style>
+        
+<div>
+  <span>Hello JQuery 1</span>
+       
+</div>
+      
+<div >
+  <span>Hello JQuery 2</span>
+</div>
+      
+<div >
+  <span>Hello JQuery 3</span>
+</div>
+  
+<div >
+  <span>Hello JQuery 4</span>
+</div>
+ 
+<div >
+  <span>Hello JQuery 5</span>
+</div>
+      
+<div >
+  <span>Hello JQuery 6</span>
+</div>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<h4>父 祖先</h4>
+<ul>
+<li>parent() 选取最近的一个父元素  </li>
+<li>parents() 选取所有的祖先元素 </li>
+</ul>
+<script>
+$(function(){
+  $("#case2_button1").click(function(){
+     $("#currentDiv").parent().toggleClass("b");
+  });
+  $("#case2_button2").click(function(){
+     $("#currentDiv").parents().toggleClass("b");
+  });
+ 
+});
+</script>
+ 
+<style>
+div{
+   padding:20px;
+}
+ 
+div#grandParentDiv{
+ background-color:pink;
+}
+ 
+div#parentDiv{
+ background-color:green;
+}
+ 
+div#currentDiv{
+ background-color:red;
+}
+ 
+.b{
+   border: 2px solid black;
+}
+ 
+</style>
+ 
+<button id="case2_button1">改变parent()的边框</button>
+ 
+<button id="case2_button2">改变parents()的边框</button>
+ 
+<div id="grandParentDiv" >
+  祖先元素
+  <div id="parentDiv">
+  父元素
+    <div id="currentDiv">当前元素</div> 
+  </div>
+</div>
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<h4>儿子 后代</h4>
+<ul>
+<li>children(): 筛选出儿子元素 (紧挨着的子元素)  </li>
+<li>find(selector): 筛选出后代元素  </li>
+<li>注: find() 必须使用参数 selector</li>
+</ul>
+
+<script>
+$(function(){
+  $("#case3_button1").click(function(){
+     $("#case3_currentDiv").children().toggleClass("b");
+  });
+  $("#case3_button2").click(function(){
+     $("#case3_currentDiv").find("div").toggleClass("b");
+  });
+   
+});
+</script>
+   
+<style>
+div{
+   padding:20px;
+}
+   
+div.case3_grandChildrenDiv{
+ background-color:pink;
+}
+   
+div.case3_childrenDiv{
+ background-color:green;
+ margin:10px;
+}
+   
+div#case3_currentDiv{
+ background-color:red;
+}
+   
+.b{
+   border: 2px solid black;
+}
+   
+</style>
+   
+<button id="case3_button1">改变children()的边框</button>
+   
+<button id="case3_button2">改变find()的边框</button>
+   
+<div id="case3_currentDiv" >
+  当前元素
+  <div class="case3_childrenDiv">
+  儿子元素1
+    <div class="case3_grandChildrenDiv">后代元素n</div> 
+  </div>
+  <div class="case3_childrenDiv">
+  儿子元素2
+    <div class="case3_grandChildrenDiv">后代元素n</div> 
+  
+  </div>
+    
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<h4>示例 4 : 同级</h4>
+<ul>
+<li>siblings(): 同级(同胞)元素</li>
+</ul>
+
+<script>
+$(function(){
+  $("#case4_button1").click(function(){
+     $("#case4_currentDiv").siblings().toggleClass("b");
+  });
+  
+});
+</script>
+  
+<style>
+div{
+   padding:20px;
+   background-color:pink;
+   margin:10px;
+}
+  
+div#case4_parentDiv{
+ background-color:green;
+}
+  
+div#case4_currentDiv{
+ background-color:red;
+}
+  
+.b{
+   border: 2px solid black;
+}
+  
+</style>
+  
+<button id="case4_button1">给同级加上边框</button>
+  
+<div id="case4_parentDiv" >
+  父元素
+  <div id="case4_currentDiv">
+    当前元素
+  </div>
+  <div >
+    同级元素
+  </div>
+  <div >
+    同级元素
+  </div>
+</div>
