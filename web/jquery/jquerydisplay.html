@@ -1,0 +1,300 @@
+<script src="http://localhost:8080/jquery.min.js"></script>
+   
+<script>
+$(function(){
+var div = $("#case1_d");
+   $("#case1_button1").click(function(){
+      div.hide();
+   });
+   $("#case1_button2").click(function(){
+      div.show();
+   });
+   $("#case1_button3").click(function(){
+      div.toggle();
+   });
+   $("#case1_button4").click(function(){
+      div.show(1000);
+   });
+   $("#case1_button5").click(function(){
+      div.hide(1000);
+   });
+   $("#case1_button6").click(function(){
+      div.toggle(1000);
+   });
+  
+});
+   
+</script>
+   
+<style>
+button{
+  display:block;
+}
+div{
+  border:solid 1px gray;
+  background-color:pink;
+  width:300px;
+  height:100px;
+}
+</style>
+ 
+<button id="case1_button1">立即隐藏</button>
+<button id="case1_button2">立即显示</button>
+<button id="case1_button3">立即切换</button>
+ 
+<button id="case1_button4">延时显示</button>
+<button id="case1_button5">延时隐藏</button>
+<button id="case1_button6">延时切换</button>
+ 
+<br>
+<br>
+   
+<div id="case1_d">
+用于演示效果的DIV
+</div>
+
+
+<br/>
+<br/>
+<br/>
+<hr/>
+
+
+
+
+<script>
+$(function(){
+var div = $("#case2_d");
+   $("#case2_button1").click(function(){
+      div.slideUp();
+   });
+   $("#case2_button2").click(function(){
+      div.slideDown();
+   });
+   $("#case2_button3").click(function(){
+      div.slideToggle();
+   });
+   $("#case2_button4").click(function(){
+      div.slideUp(2000);
+   });
+   $("#case2_button5").click(function(){
+      div.slideDown(2000);
+   });
+   $("#case2_button6").click(function(){
+      div.slideToggle(2000);
+   });
+   
+});
+    
+</script>
+    
+<style>
+button{
+  display:block;
+}
+div{
+  border:solid 1px gray;
+  background-color:pink;
+  width:300px;
+  height:100px;
+}
+</style>
+   
+<button id="case2_button1">向上滑动</button>
+<button id="case2_button2">向下滑动</button>
+<button id="case2_button3">滑动切换</button>
+  
+<button id="case2_button4">延时向上滑动</button>
+<button id="case2_button5">延时向下滑动</button>
+<button id="case2_button6">延时滑动切换</button>
+  
+<br>
+<br>
+    
+<div id="case2_d">
+用于演示效果的DIV
+</div>
+
+<br/>
+<br/>
+<br/>
+<hr/>
+
+
+<script>
+$(function(){
+var div = $("#case3_d");
+   $("#case3_button1").click(function(){
+      div.fadeIn();
+   });
+   $("#case3_button2").click(function(){
+      div.fadeOut();
+   });
+   $("#case3_button3").click(function(){
+      div.fadeToggle();
+   });
+   $("#case3_button4").click(function(){
+      div.fadeIn(2000);
+   });
+   $("#case3_button5").click(function(){
+      div.fadeOut(2000);
+   });
+   $("#case3_button6").click(function(){
+      div.fadeToggle(2000);
+   });
+ 
+   $("#case3_button7").click(function(){
+      $("#case3_d1").fadeTo("slow",0.2);
+      $("#case3_d2").fadeTo("slow",0.5);
+      $("#case3_d3").fadeTo("slow",0.8);
+   });
+   
+});
+    
+</script>
+    
+<style>
+button{
+  display:block;
+}
+table div{
+    border:solid px gray;
+  background-color:pink;
+  width:80px;
+  height:50px;
+}
+div{
+  border:solid 1px gray;
+  background-color:pink;
+  width:300px;
+  height:100px;
+}
+</style>
+<button id="case3_button1">淡出</button> 
+<button id="case3_button2">淡入</button>
+<button id="case3_button3">淡入淡出切换</button>
+<button id="case3_button4">延时淡出</button>
+<button id="case3_button5">延时淡入</button>
+<button id="case3_button6">延时淡入淡出切换</button> 
+<button id="case3_button7">fadeTo</button>
+ 
+<br>
+<br>
+    
+<div id="case3_d">
+用于演示效果的DIV
+</div>
+ 
+<table>
+<tr>
+   <td>
+      <div id="case3_d1">
+       用于演示fadeTo 20%
+      </div>
+   </td>
+   <td>
+     <div id="case3_d2">
+       用于演示fadeTo 50%
+     </div>  
+   </td>
+ 
+   <td>
+     <div id="case3_d3">
+      用于演示fadeTo 80%
+     </div>  
+   </td>
+ 
+</tr>
+ 
+</table>
+
+<br/>
+<br/>
+<br/>
+<hr/>
+<h4>示例 4 : 自定义动画效果</h4>
+<p>通过animate 可以实现更为丰富的动画效果 </p>
+<p>animate()第一个参数为css样式 </p>
+<p>animate()第二个参数为延时毫秒 </p>
+<p>注： 默认情况下，html中的元素都是固定，并且无法改变的位置的。 为了使用animate()自定义动画效果，需要通过css把元素的position设置为relative、absolute或者fixed。</p>
+
+
+<script>
+$(function(){
+var div = $("#case4_d");
+   $("#case4_b1").click(function(){
+    div.animate({left:'100px'},2000);
+    div.animate({left:'0px',top:'50px',height:'50px'},2000);
+   });
+});
+    
+</script>
+    
+<style>
+button{
+  display:block;
+}
+ 
+div{
+  background-color:pink;
+  width:200px;
+  height:80px;
+  font-size:12px;
+  position:relative;
+}
+</style>
+   
+<button id="case4_b1">自定义动画</button>
+ 
+<br>
+<br>
+    
+<div id="case4_d">
+<p>1. 向右移动100px</p>
+<p>2. 向左下移动50px，同时高度变小</p>
+</div>
+
+<br/>
+<br/>
+<br/>
+<hr/>
+
+
+
+<h4>回调函数callback()!演示，动画结束后弹窗</h4>
+<script>
+$(function(){
+var div = $("#case5_d");
+   $("#case5_b1").click(function(){
+    div.animate({left:'100px'},2000);
+    div.animate({left:'0px',top:'50px',height:'50px'},2000,function(){
+     alert("动画演示结束");
+    });
+   });
+});
+    
+</script>
+    
+<style>
+button{
+  display:block;
+}
+ 
+div{
+  background-color:pink;
+  width:200px;
+  height:80px;
+  font-size:12px;
+  position:relative;
+}
+</style>
+   
+<button id="case5_b1">自定义动画结束时，会有提示框</button>
+ 
+<br>
+<br>
+    
+<div id="case5_d">
+<p>1. 向右移动100px</p>
+<p>2. 向左下移动50px，同时高度变小</p>
+</div>

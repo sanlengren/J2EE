@@ -1,0 +1,111 @@
+<script src="http://localhost:8080/jquery.min.js"></script>
+  
+<script>
+$(function(){
+   $("#case1_button1").click(function(){
+      alert("align属性是:" + $("#h").attr("align") );
+   });
+   $("#case1_button2").click(function(){
+      alert("game属性是:" + $("#h").attr("game") );
+   });
+});
+  
+</script>
+  
+<button id="case1_button1">获取align属性</button>
+  
+<button id="case1_button2">获取自定义属性 game</button>
+  
+<br>
+<br>
+  
+<h1 id="h" align="center" game="LOL">居中标题</h1>
+
+
+
+
+
+<script>
+$(function(){
+   $("#case2_button1").click(function(){
+      $("#case2_h").attr("align","right") ;
+   });
+ 
+});
+   
+</script>
+   
+<button id="case2_button1">修改align属性为right</button>
+   
+<br>
+<br>
+   
+<h1 id="case2_h" align="center" >居中标题</h1>
+
+
+
+<script>
+$(function(){
+   $("#case3_button1").click(function(){
+         $("#case3_h").removeAttr("align");
+   });
+});
+   
+</script>
+   
+<button id="case3_button1">删除align属性</button>
+ 
+<br>
+<br>
+   
+<h1 id="case3_h" align="center" >居中标题</h1>
+
+<br>
+<br>
+
+
+<p>与prop一样attr也可以用来获取与设置元素的属性。</p>
+<p>区别在于，对于自定义属性和选中属性的处理。</p>
+<p>选中属性指的是 checked,selected 这2种属性</p>
+<p>1. 对于自定义属性 attr能够获取，prop不能获取</p>
+<p>2. 对于选中属性</p>
+<p>attr 只能获取初始值， 无论是否变化</p>
+<p>prop 能够访问变化后的值，并且以true|false的布尔型返回。</p>
+<p>所以在访问表单对象属性的时候，应该采用prop而非attr</p>
+<script>
+$(function(){
+   $("#case4_button1").click(function(){
+      alert("game属性是:" + $("#c").attr("game") );
+   });
+ 
+   $("#case4_button2").click(function(){
+      alert("game属性是:" + $("#c").prop("game") );
+   });
+ 
+   $("#case4_button3").click(function(){
+      alert("checked属性是:" + $("#c").attr("checked") );
+   });
+ 
+   $("#case4_button4").click(function(){
+      alert("checked属性是:" + $("#c").prop("checked") );
+   });
+ 
+});
+  
+</script>
+  
+<style>
+button{
+  display:block;
+}
+</style>
+ 
+<button id="case4_button1">通过attr获取自定义属性 game</button>
+<button id="case4_button2">通过prop获取自定义属性 game</button>
+<button id="case4_button3">通过attr获取 checked属性</button>
+<button id="case4_button4">通过prop获取 checked属性</button>
+  
+<br>
+<br>
+  
+<input type="checkbox"  id="c" game="LOL" checked="checked"> 选中的复选框
