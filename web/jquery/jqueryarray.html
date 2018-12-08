@@ -1,0 +1,41 @@
+<script src="http://localhost:8080/jquery.min.js"></script>
+ 
+ 
+<h4> $.each 遍历一个数组 </h4>
+<h4>第一个参数是数组 </h4>
+<h4>第二个参数是回调函数 i是下标，n是内容</h4>
+<script charset='gb2312'>
+var a = new Array(1,2,3);
+$.each( a, function(i, n){
+  document.write( "元素[" + i + "] : " + n + "<br>" );
+})
+document.close();
+ 
+</script> 
+
+<br/>
+
+<h4>$.unique() 去掉重复的元素</h4>
+<script>
+var a = new Array(5,2,4,2,3,3,1,4,2,5);
+a.sort();
+$.unique(a);
+$.each( a, function(i, n){
+  document.write( "元素[" + i + "] : " + n + "<br>" );
+})
+document.close();
+  
+</script> 
+
+<br/>
+<h4>$.inArray 返回元素在数组中的位置 ，如果不存在返回-1</h4>
+
+  
+<script>
+var a = new Array(1,2,3,4,5,6,7,8);
+document.writeln($.inArray(9,a));
+document.write("<br>")
+document.write($.inArray(8,a));
+document.close();
+  
+</script> 

@@ -1,0 +1,52 @@
+<script src="http://localhost:8080/jquery.min.js"></script>
+    
+<script>
+$(function(){
+   $("#case1_button").click(function(){
+      var div= $("#case1_d");
+      var d = div[0];
+      var s ="JQuery对象是 " + div;
+      s +="\n对应的DOM对象是 " + d
+      alert(s);
+   });
+});
+     
+</script>
+  <button id="case1_button">JQuery对象div转为DOM对象d</button>
+<br>
+<br>
+    
+
+     
+<div id="case1_d">
+Hello JQuery
+</div>
+
+
+<hr/>
+<hr/>
+
+
+
+
+<script>
+$(function(){
+   $("#case2_butto").click(function(){
+      var div= document.getElementById("case2_d");
+      var d = $(div);
+      var s ="DOM对象是 " + div;
+      s +="\n对应的JQuery对象是 " + d
+      alert(s);
+   });
+});
+     
+</script>
+  <button id="case2_butto">DOM对象div转为JQuery对象d</button>
+<br>
+<br>
+    
+
+     
+<div id="case2_d">
+Hello JQuery
+</div>

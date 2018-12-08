@@ -1,0 +1,167 @@
+<script src="http://localhost:8080/jquery.min.js"></script>
+ 
+<div id="case1_checkResult"></div>
+  
+输入账号 :<input id="case1_name" type="text">
+  
+<script>
+$(function(){
+   $("#case1_name").keyup(function(){
+     var page = "/ajax/checkName.jsp";
+     var value = $(this).val();
+        $.ajax({
+            url: page,
+            data:{"name":value},
+            success: function(result){
+              $("#case1_checkResult").html(result);
+            }
+        });
+   });
+});
+ 
+</script>
+
+<!-- 参考 使用AJAX 通过无刷新验证账号是否存在 这个例子,服务端使用JSP进行验证，当用户输入abc的时候提示"已经存在" -->
+<!-- 完整的 $.ajax 参数 比较复杂，这里采用了常见的调用方式。 -->
+
+<!-- .ajax采用参数集的方式 {param1,param2,param3} 不同的参数之间用,隔开 -->
+<!-- 第一个参数 url:page 表示访问的是page页面 -->
+<!-- 第二个参数 data:{name:value} 表示提交的参数 -->
+<!-- 第三个参数 success: function(){} 表示服务器成功返回后对应的响应函数 -->
+
+<br/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<hr/>
+
+
+
+<div id="checkResultbyget"></div>
+  
+输入账号 :<input id="case2_name" type="text">
+  
+<script>
+$(function(){
+   $("#case2_name").keyup(function(){
+     var page = "/ajax/checkName.jsp";
+     var value = $(this).val();
+ 
+        $.get(
+            page,
+            {"name":value},
+            function(result){
+              $("#checkResultbyget").html(result);
+            }
+        );
+   });
+});
+ 
+</script>
+<!-- $.get 是 $.ajax的简化版，专门用于发送GET请求  -->
+
+<!-- $.get 使用3个参数 -->
+<!-- 第一个参数: page 访问的页面 -->
+<!-- 第二个参数: {name:value} 提交的数据 -->
+<!-- 第三个参数: function(){} 响应函数 -->
+<!-- 只有第一个参数是必须的，其他参数都是可选 -->
+
+<br/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<hr/>
+
+<div id="case3_checkResult"></div>
+   
+输入账号 :<input id="case3_name" type="text">
+   
+<script>
+$(function(){
+   $("#case3_name").keyup(function(){
+     var page = "/ajax/checkName.jsp";
+     var value = $(this).val();
+  
+        $.post(
+            page,
+            {"name":value},
+            function(result){
+              $("#case3_checkResult").html(result);
+            }
+        );
+   });
+});
+  
+</script>
+
+<!-- 使用post方式提交ajax -->
+<!-- $.post 是 $.ajax的简化版，专门用于发送POST请求  -->
+<!-- $.post 使用3个参数 -->
+<!-- 第一个参数: page 访问的页面 -->
+<!-- 第二个参数: {name:value} 提交的数据 -->
+<!-- 第三个参数: function(){} 响应函数 -->
+<!-- 只有第一个参数是必须的，其他参数都是可选 -->
+<!-- 参考 method="get" 与 method="post"的区别 -->
+
+<br/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<hr/>
+<div id="case4_checkResult"></div>
+    
+输入账号 :<input id="case4_name" type="text">
+    
+<script>
+$(function(){
+   $("#case4_name").keyup(function(){
+     var value = $(this).val();
+     var page = "/ajax/checkName.jsp?name="+value;
+     $("#case4_checkResult").load(page);
+   });
+});
+   
+</script>
+
+
+
+
+<br/>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<hr/>
+<div id="case5_checkResult"></div>
+<div id="case5_data"></div>
+<a href="http://localhost:8080/ajax/checkName.jsp">http://localhost:8080/ajax/checkName.jsp</a>
+ 
+<form id="case5_form">   
+输入账号 :<input id="case5_name" type="text" name="name"> <br>
+输入年龄 :<input id="case5_age" type="text" name="age"> <br>
+输入手机号码 :<input id="case5_mobile" type="text" name="mobile"> <br>
+     
+</form>
+ 
+<script>
+$(function(){
+   $("input").keyup(function(){
+      var data = $("#case5_form").serialize();
+      var url = "http://localhost:8080/ajax/checkName.jsp";
+      var link = url+"?"+ data;
+      $("a").html(link);
+      $("a").attr("href",link);
+   });
+});
+    
+</script>
+
+<!-- serialize()： 格式化form下的输入数据 -->
+<!-- 有的时候form下的输入内容比较多，一个一个的取比较麻烦，就可以使用serialize() 把输入数据格式化成字符串 -->

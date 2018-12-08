@@ -1,0 +1,15 @@
+<script src="http://localhost:8080/jquery.min.js"></script>
+    
+<script>
+  
+var s1 = "{\"name\":\"盖伦\"";
+var s2 = ",\"hp\":616}";
+var s3 = s1+s2;
+  
+document.write("这是一个JSON格式的字符串:" + s3);
+document.write("<br>");
+var gareen = $.parseJSON(s3);
+  
+document.write("这是一个JSON对象: " + gareen);
+   
+</script>
