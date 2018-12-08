@@ -1,0 +1,117 @@
+<script src="http://localhost:8080/vue.min.js"></script>
+   
+<style>
+table tr td{
+    border:1px solid gray;
+}
+table{
+    border-collapse:collapse;
+    width:300px;
+}
+tr.firstLine{
+    background-color: lightGray;
+}
+</style>
+ 
+<div id="case1_div1">
+   
+    <table align="center" >
+        <tr class="firstLine">
+            <td>name</td>
+            <td>hp</td>
+        </tr>
+         
+        <tr v-for="hero in heros">
+            <td>{{hero.name}}</td>
+            <td>{{hero.hp}}</td>
+        </tr>
+         
+    </table>
+ 
+</div>
+    
+<script charset='gb2312'>
+  
+var data = [
+          {name:"¸ÇÂ×",hp:341},
+          {name:"ÌáÄª",hp:225},
+          {name:"°²ÄÝ",hp:427},
+          {name:"ËÀ¸è",hp:893}
+    ];
+new Vue({
+      el: '#case1_div1',
+      data: {
+          heros:data
+      }
+    })
+    
+</script>
+
+
+
+<br/>
+
+<br/>
+
+<br/>
+<hr/>
+
+
+<div id="case2_div1">
+   
+    <table align="center" >
+        <tr class="firstLine">
+            <td>number</td>
+            <td>name</td>
+            <td>hp</td>
+        </tr>
+         
+        <tr v-for="hero,index in heros">
+            <td>{{index+1}}</td>
+            <td>{{hero.name}}</td>
+            <td>{{hero.hp}}</td>
+        </tr>
+         
+    </table>
+ 
+</div>
+    
+<script>
+  
+var data = [
+          {name:"¸ÇÂ×",hp:341},
+          {name:"ÌáÄª",hp:225},
+          {name:"°²ÄÝ",hp:427},
+          {name:"ËÀ¸è",hp:893}
+    ];
+new Vue({
+      el: '#case2_div1',
+      data: {
+          heros:data
+      }
+    })
+    
+</script>
+
+<br/>
+
+<br/>
+
+<br/>
+<hr/>
+
+
+
+<div id="case3_div1">
+    <div v-for="i in 10">
+     {{ i }}
+    </div>
+</div>
+    
+<script>
+  
+new Vue({
+      el: '#case3_div1'
+    })
+    
+</script>

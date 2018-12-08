@@ -1,0 +1,42 @@
+<script src="http://localhost:8080/vue.min.js"></script>
+   
+<div id="case1_div1">
+    <a v-bind:href="page">http://12306.com</a>
+</div>
+    
+<script>
+  
+new Vue({
+      el: '#case1_div1',
+      data:{
+          page:'http://news.sina.com.cn'
+      }
+    })
+    
+</script>
+
+
+
+<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+<h4>另外一种写法</h4>
+<hr/>
+<div id="case2_div1">
+    <a :href="page">http://12306.com</a>
+</div>
+    
+<script>
+  
+new Vue({
+      el: '#case2_div1',
+      data:{
+          page:'http://12306.com'
+      }
+    })
+    
+</script>
