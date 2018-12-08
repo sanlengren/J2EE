@@ -1,0 +1,22 @@
+<script src="http://localhost:8080/vue.min.js"></script>
+ 
+<div id="div1">
+   
+  {{inputdata.name}}
+ 
+</div>
+  
+<script>
+  
+//准备数据
+var inputdata = {"name":"盖伦","hp":616};
+ 
+//通过vue.js 把数据和对应的视图关联起来
+new Vue({
+      el: '#div1',
+      data: {
+        message: inputdata
+      }
+    })
+  
+</script>

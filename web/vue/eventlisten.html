@@ -1,0 +1,317 @@
+<script src="http://localhost:8080/vue.min.js"></script>
+  
+<div id="div1">
+  
+  <div>一共点击了  {{clickNumber}}次</div> 
+  <button v-on:click="count">点击</button>
+  
+</div>
+   
+<script>
+   
+new Vue({
+      el: '#div1',
+      data: {
+          clickNumber:0
+      },
+      methods:{
+          count: function(){
+              this.clickNumber++;
+          }
+      }
+    })
+   
+</script>
+
+<hr/>
+
+
+<div id="div2">
+  
+  <div>一共点击了  {{clickNumber}}次</div> 
+  <button @click="count">点击</button>
+  
+</div>
+   
+<script>
+   
+new Vue({
+      el: '#div2',
+      data: {
+          clickNumber:0
+      },
+      methods:{
+          count: function(){
+              this.clickNumber++;
+          }
+      }
+    })
+   
+</script>
+
+<br/>
+<hr/>
+<br/>
+<br/>
+
+<style type="text/css">
+   * {
+/*        margin: 0 auto; */
+/*        text-align:center; */
+/*        line-height: 40px; */
+cursor:pointer;
+   }
+   #case3_content {
+       width: 100px;
+       cursor:pointer;
+   }
+   #grandFather {
+       background: green;
+   }
+   #father {
+       background: blue;
+   }
+   #me {
+       background: red;
+   }#son {
+        background: gray;
+    }
+</style>
+     
+<div id="case3_content">
+    <div id="grandFather"  v-on:click="doc">
+        grandFather
+        <div id="father" v-on:click="doc">
+            father
+            <div id="me" v-on:click="doc">
+                me
+                <div id="son" v-on:click="doc">
+                son
+            </div>
+            </div>
+        </div>
+    </div>
+ 
+</div>
+   
+<script>
+    var content = new Vue({
+        el: "#case3_content",
+        data: {
+            id: ''
+        },
+        methods: {
+            doc: function () {
+                this.id= event.currentTarget.id;
+                alert(this.id)
+            }
+        }
+    })
+</script>
+
+
+
+<br/>
+<hr/>
+<br/>
+<br/>
+
+
+<h4>在me div设置了click.stop事件,所以不会继续冒泡触发上层click事件</h4>
+<div id="case4_content">
+    <div id="grandFather"  v-on:click="doc">
+        grandFather
+        <div id="father" v-on:click="doc">
+            father
+            <div id="me" v-on:click.stop="doc">
+                me
+                <div id="son" v-on:click="doc">
+                son
+            </div>
+            </div>
+        </div>
+    </div>
+ 
+</div>
+   
+<script>
+    var content = new Vue({
+        el: "#case4_content",
+        data: {
+            id: ''
+        },
+        methods: {
+            doc: function () {
+                this.id= event.currentTarget.id;
+                alert(this.id)
+            }
+        }
+    })
+</script>
+
+
+
+
+<br/>
+<hr/>
+<br/>
+<br/>
+
+
+<h4>事件修饰符 优先触发 .capture</h4>
+
+
+
+<div id="case5_content">
+    <div id="grandFather"  v-on:click="doc">
+        grandFather
+        <div id="father" v-on:click.capture="doc">
+            father
+            <div id="me" v-on:click="doc">
+                me
+                <div id="son" v-on:click="doc">
+                son
+            </div>
+            </div>
+        </div>
+    </div>
+ 
+</div>
+   
+<script>
+    var content = new Vue({
+        el: "#case5_content",
+        data: {
+            id: ''
+        },
+        methods: {
+            doc: function () {
+                this.id= event.currentTarget.id;
+                alert(this.id)
+            }
+        }
+    })
+</script>
+
+
+
+<br/>
+<hr/>
+<br/>
+<br/>
+
+
+<h4>事件修饰符 只有自己能触发，子元素无法触发.self</h4>
+
+<div id="case6_content">
+    <div id="grandFather"  v-on:click="doc">
+        grandFather
+        <div id="father" v-on:click.self="doc">
+            father
+            <div id="me" v-on:click="doc">
+                me
+                <div id="son" v-on:click="doc">
+                son
+            </div>
+            </div>
+        </div>
+    </div>
+ 
+</div>
+   
+<script>
+    var content = new Vue({
+        el: "#case6_content",
+        data: {
+            id: ''
+        },
+        methods: {
+            doc: function () {
+                this.id= event.currentTarget.id;
+                alert(this.id)
+            }
+        }
+    })
+</script>
+
+<br/>
+<hr/>
+<br/>
+<br/>
+<h4>事件修饰符 只能提交一次 .once/这样father点击一次之后，就不会再监听到click了，但是有意思的是，grandFather还能监听到~</h4>
+<div id="case7_content">
+    <div id="grandFather"  v-on:click="doc">
+        grandFather
+        <div id="father" v-on:click.once="doc">
+            father
+            <div id="me" v-on:click="doc">
+                me
+                <div id="son" v-on:click="doc">
+                son
+            </div>
+            </div>
+        </div>
+    </div>
+ 
+</div>
+   
+<script>
+    var content = new Vue({
+        el: "#case7_content",
+        data: {
+            id: ''
+        },
+        methods: {
+            doc: function () {
+                this.id= event.currentTarget.id;
+                alert(this.id)
+            }
+        }
+    })
+</script>
+<br/>
+<hr/>
+<br/>
+<br/>
+
+
+<h4>事件修饰符 阻止提交 .prevent/通过在 click 后面添加 .prevent 可以阻止页面刷新。/也可以直接用@click.prevent后面不跟函数
+</h4>
+
+<div id="case8_div1">
+   
+  <a href="http://12306.com" @click="jump" >正常的链接 http://12306.com</a>
+   
+  <br>
+  <a href="http://12306.com" @click.prevent="jump" >prevent jump()之后的链接 http://12306.com</a>
+  <br>
+  <a href="http://12306.com" @click.prevent >纯prevent之后的链接 http://12306.com</a>
+   
+  <br>
+  <br>
+  <form @submit="jump" action="http://12306.com">
+    <button type="submit">正常的form</button>
+  </form>
+  <form @submit.prevent="jump" action="http://12306.com">
+    <button type="submit">prevent jump()之后的form</button>
+  </form>
+  <form @submit.prevent action="http://12306.com">
+    <button type="submit">纯prevent之后的form</button>
+  </form>
+   
+</div>
+    
+<script>
+    
+new Vue({
+      el: '#case8_div1',
+      data: {
+      },
+      methods:{
+          jump:function(){
+              alert("jump()函数被调用");
+          }
+      }
+    })
+    
+</script>
